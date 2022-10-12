@@ -1,0 +1,171 @@
+CREATE
+SYNTAX
+ Vansh Patpatia B-20, 2017117
+ Syntax: CREATE TABLE table_name ( column1 datatype,
+column2 datatype, column3 datatype, ....
+);
+INSERT INTO
+Syntax: INSERT INTO table_name
+ VALUES (value1, value2, value3, ...);
+SELECT
+Syntax: SELECT column1, column2, ...
+FROM table_name;
+SELECT * FROM table_name; (To select the entire table)
+WHERE
+Syntax: SELECT column1, column2, ... FROM table_name
+WHERE condition;
+UPDATE
+Syntax: UPDATE table_name
+SET column1 = value1, column2 = value2, ... WHERE condition;
+ OR
+  
+DELETE
+Syntax: DELETE FROM table_name WHERE condition;
+AGGEREGATE FUNCTIONS
+MAX
+Syntax: SELECT MAX(column_name) FROM table_name
+WHERE condition;
+MIN
+Syntax: SELECT MIN(column_name) FROM table_name
+WHERE condition;
+AVG
+Syntax: SELECT AVG(column_name) FROM table_name
+WHERE condition;
+COUNT
+Syntax: SELECT COUNT(column_name) FROM table_name
+WHERE condition; SUM
+Syntax: SELECT SUM(column_name) FROM table_name
+WHERE condition;
+Vansh Patpatia B-20, 2017117
+   
+OPERATORS
+AND
+Syntax: SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+OR
+Syntax: SELECT column1, column2, ... FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;
+NOT
+Syntax: SELECT column1, column2, ... FROM table_name
+WHERE NOT condition;
+IN
+Syntax: SELECT column_name(s) FROM table_name
+WHERE column_name IN (value1, value2, ...);
+BETWEEN
+Syntax: SELECT column_name(s) FROM table_name
+WHERE column_name BETWEEN value1 AND value2; LIKE
+Syntax: SELECT column1, column2, ... FROM table_name
+WHERE columnN LIKE pattern;
+  
+ORDER BY
+Syntax: SELECT column1, column2, ... FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+GROUP BY
+Syntax: SELECTcolumn_name(s) FROM table_name
+WHERE condition
+GROUP BY column_name(s);
+HAVING
+Syntax: SELECT column_name(s) FROM table_name
+WHERE condition
+GROUP BY column_name(s) HAVING condition;
+ALIASES
+Syntax: SELECT column_name AS alias_name
+FROM table_name;
+ALTER FUNCTIONS
+ADD
+Syntax: ALTER TABLE table_name ADD column_name datatype;
+     
+DROP
+Syntax: ALTER TABLE table_name
+DROP COLUMN column_name;
+MODIFY
+Syntax: ALTER TABLE table_name
+MODIFY column_name datatype;
+VIEW
+CTREATE VIEW
+Syntax: CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name WHERE condition;
+DROP VIEW
+Syntax: DROP VIEW view_name;
+SETTING PRIMARY KEY
+Syntax: CREATE TABLE table_name ( column1 datatype, column2 datatype,
+column3 datatype, ....
+PRIMARY KEY(column1)
+);
+    
+create table Product (Pid int, PName varchar(25), DOP date, Amount int, City varchar(20)) insert into Product values (1,'Shoes','20-jun-2022',850,'Delhi');
+insert into Product values (2,'Shirt','14-jul-2022',1300,'Dehradun');
+insert into Product values (3,'Jeans','05-mar-2021',1700,'Roorkee');
+insert into Product values (4,'Skirt','10-jun-2022',900,'Delhi');
+insert into Product values (5,'Towel','15-may-2022',500,'Haridwar');
+select* from Product
+select PName from Product where (City='Delhi' OR City='Dehradun' OR City='Roorkee' OR City='Haridwar')
+select PName from Product where (Amount>1000 AND Amount<2000) select Pid from Product where (Amount>1000 AND City='Dehradun')
+LAB-1
+ Vansh Patpatia B-20, 2017117
+    
+LAB-2
+ create table Customer (Cid int, CName varchar(25), City varchar(20), Phone varchar(10), DOB date) insert into Customer values (124, 'Saloni', 'Dehradun', 9872638279, '12-Jun-1997');
+insert into Customer values (125, 'Neha', 'Pune', 9873623780, '03-May-1998');
+insert into Customer values (126, 'Ajay', 'Haridwar', 9823527389, '15-Mar-1996');
+insert into Customer values (127, 'Vinod', 'Roorkee', 9872536784, '18-Apr-1997'); insert into Customer values (128, 'Tina', 'Delhi', 9651893657, '03-Apr-1996'); select* from Customer
+select Cid from Customer where City='Dehradun'
+select CName from Customer where (City!='Dehradun')
+select CName from Customer where City in ('Dehradun','Haridwar')
+select CName from Customer where City not in ('Dehradun','Roorkee','Haridwar') select CName,City from Customer where Cid>124 AND Cid<128
+Vansh Patpatia
+B-20, 2017117
+
+      
+LAB-3
+ create table Manager (Mid int, MName varchar(25), Salary float, DOB date, City varchar(20)) insert into Manager values(01, 'Stuti', 12000.0, '10-May-1996', 'Pune');
+insert into Manager values(02, 'Arun', 15000.0, '27-Sep-1994', 'Delhi');
+insert into Manager values(03, 'Satish', 10000.0, '05-Jul-1995', 'Dehradun');
+alter table Manager modify (MName varchar(40))
+select* from Manager
+alter table Manager rename column MName to EName
+rename Manager to Employee
+select * from Employee where City = 'Pune'
+select count(EName) from Employee group by (City)
+select count(EName),City from Employee group by (City)
+insert into Employee values(04, 'Sanjay', 13000.0, '23-Dec-1995', 'Delhi')
+select count(EName),City from Employee group by (City) having count(EName)>=1 select City from Employee where City like 'D%'
+select City from Employee where City like '%u%'
+select City from Employee where City like '%u__'
+select City from Employee where City like '%n'
+select City from Employee where City not like '%n'
+select* from Employee
+Vansh Patpatia B-20, 2017117
+
+      
+LAB-4
+create table Students (SName varchar(30), Roll int, Subject varchar(20)) insert into Students values('David', 20, 'Maths');
+insert into Students values('Sasha', 30, 'English');
+select* from Students
+Vansh Patpatia B-20, 2017117
+ create table Employee(Eid int, EName varchar(25), City varchar(20), Salary float, DOB date) insert into Employee values (01, 'Saloni', 'Pune', 13467.75, '12-Jun-1997');
+insert into Employee values (02, 'Neha', 'Mumbai', 22457.25, '03-May-1998');
+insert into Employee values (03, 'Ajay', 'Delhi', 34153.50, '15-Mar-1996');
+insert into Employee values (04, 'Vinod', 'Dehradun', 16912.25, '18-Apr-1997'); insert into Employee values (05, 'Tina', 'Delhi', 26387.50, '03-Apr-1996'); select* from Employee
+select avg(Salary) as Avg_SAL from Employee
+create view xyz as select EName from Employee select* from xyz
+create view V3 as select EName from Employee select* from V3
+
+    
+LAB-5
+ create table Employee(Eid int, EName varchar(25), Age int, Salary float, Phone varchar(10), DOB date); insert into Employee values (01, 'Saloni', 25, 13467.75, 9872638279, '12-Jun-1997');
+insert into Employee values (02, 'Neha', 24, 22457.25, 9873623780, '03-May-1998');
+insert into Employee values (03, 'Ajay', 26, 34153.50, 9823527389, '15-Mar-1996');
+insert into Employee values (04, 'Vinod', 25, 16912.25, 9872536784, '18-Apr-1997'); insert into Employee values (05, 'Tina', 26, 26387.50, 9651893657, '03-Apr-1996'); select* from Employee
+alter table Employee rename column phone to phone_no
+create table Emp (Eid int ,EName varchar(25), Age int, Salary float, check(Salary>20000), DOB date) insert into Emp values(01,'Ankit',32,40000,'05-jan-1990');
+insert into Emp values(02,'Anisha',35,25000, '10-feb-1987');
+insert into Emp values(03,'Trisha',30,30000, '05-jun-1992');
+insert into Emp values(04,'Manav',28,50000, '03-may-1994'); select months_between(Sysdate,dob) as age from Emp
+select months_between(Sysdate,dob)/12 as age from Employee alter table Emp add age_Calculated int
+update Emp set age_calculated = round(months_between(Sysdate,dob)/12) select* from Emp
+Vansh Patpatia B-20, 2017117
+
+    
